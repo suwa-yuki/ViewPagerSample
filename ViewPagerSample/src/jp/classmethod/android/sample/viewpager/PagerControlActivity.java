@@ -59,6 +59,7 @@ public class PagerControlActivity extends Activity {
                 int G = (int)( Math.random() * 256);
                 int B = (int)( Math.random() * 256);
                 adapter.add(Color.rgb(R, G, B));
+                adapter.notifyDataSetChanged();
             }
         });
         
