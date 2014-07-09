@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
 /**
- * ViewPager ‚ğ•\¦‚·‚éƒTƒ“ƒvƒ‹.
+ * ViewPager ã‚’è¡¨ç¤ºã™ã‚‹ã‚µãƒ³ãƒ—ãƒ«.
  */
 public class PagerActivity extends Activity {
 
@@ -14,7 +14,7 @@ public class PagerActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        // ƒJƒXƒ^ƒ€ PagerAdapter ‚ğ¶¬
+        // ã‚«ã‚¹ã‚¿ãƒ  PagerAdapter ã‚’ç”Ÿæˆ
         CustomPagerAdapter adapter = new CustomPagerAdapter(this);
         adapter.add(Color.BLACK);
         adapter.add(Color.RED);
@@ -24,11 +24,11 @@ public class PagerActivity extends Activity {
         adapter.add(Color.MAGENTA);
         adapter.add(Color.YELLOW);
 
-        // ViewPager ‚ğ¶¬
+        // ViewPager ã‚’ç”Ÿæˆ
         ViewPager viewPager = new ViewPager(this);
         viewPager.setAdapter(adapter);
         
-        // ƒŒƒCƒAƒEƒg‚ÉƒZƒbƒg
+        // ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã«ã‚»ãƒƒãƒˆ
         setContentView(viewPager);
     }
     

@@ -11,7 +11,7 @@ import android.support.v4.content.Loader;
 import android.support.v4.view.ViewPager;
 
 /**
- * ‰æ‘œ‚ğg‚Á‚½ ViewPager ‚ÌƒTƒ“ƒvƒ‹.
+ * ç”»åƒã‚’ä½¿ã£ãŸ ViewPager ã®ã‚µãƒ³ãƒ—ãƒ«.
  */
 public class ImagePagerActivity extends FragmentActivity {
     
@@ -21,14 +21,14 @@ public class ImagePagerActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // ViewPager ‚ğƒŒƒCƒAƒEƒg‚ÉƒZƒbƒg
+        // ViewPager ã‚’ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã«ã‚»ãƒƒãƒˆ
         mPager = new ViewPager(this);
         setContentView(mPager);
-        // CursorLoader ‚ğŒÄ‚Ño‚·
+        // CursorLoader ã‚’å‘¼ã³å‡ºã™
         getSupportLoaderManager().initLoader(0, null, callbacks);
     }
     
-    /** CursorLoader ‚ÌƒR[ƒ‹ƒoƒbƒN. */
+    /** CursorLoader ã®ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯. */
     private LoaderCallbacks<Cursor> callbacks = new LoaderCallbacks<Cursor>() {
         
         @Override
@@ -43,14 +43,14 @@ public class ImagePagerActivity extends FragmentActivity {
         
         @Override
         public void onLoadFinished(Loader<Cursor> loader, Cursor c) {
-            // Cursor ‚©‚ç id ‚ğæ“¾‚µ‚Ä PagerAdapter ‚É“ü‚ê‚é
+            // Cursor ã‹ã‚‰ id ã‚’å–å¾—ã—ã¦ PagerAdapter ã«å…¥ã‚Œã‚‹
             ImagePagerAdapter adapter = new ImagePagerAdapter(ImagePagerActivity.this);
             c.moveToFirst();
             do {
                 long id = c.getLong(c.getColumnIndexOrThrow(MediaStore.Images.ImageColumns._ID));
                 adapter.add(id);
             } while (c.moveToNext());
-            // ViewPager ‚ÉƒZƒbƒg
+            // ViewPager ã«ã‚»ãƒƒãƒˆ
             mPager.setAdapter(adapter);
         }
         

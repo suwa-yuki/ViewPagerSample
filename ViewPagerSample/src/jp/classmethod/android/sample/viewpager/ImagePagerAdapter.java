@@ -16,21 +16,21 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 /**
- * ‰æ‘œ‚ğ•\¦‚·‚é PagerAdapter.
+ * ç”»åƒã‚’è¡¨ç¤ºã™ã‚‹ PagerAdapter.
  */
 public class ImagePagerAdapter extends PagerAdapter {
 
-    /** ƒRƒ“ƒeƒLƒXƒg. */
+    /** ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ. */
     private Context mContext;
 
     /** ContentResolver. */
     private ContentResolver mResolver;
 
-    /** ID ‚ÌƒŠƒXƒg. */
+    /** ID ã®ãƒªã‚¹ãƒˆ. */
     private ArrayList<Long> mList;
 
     /**
-     * ƒRƒ“ƒXƒgƒ‰ƒNƒ^.
+     * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿.
      * @param context {@link Context}
      */
     public ImagePagerAdapter(Context context) {
@@ -40,7 +40,7 @@ public class ImagePagerAdapter extends PagerAdapter {
     }
 
     /**
-     * ƒAƒCƒeƒ€‚ğ’Ç‰Á‚·‚é.
+     * ã‚¢ã‚¤ãƒ†ãƒ ã‚’è¿½åŠ ã™ã‚‹.
      * @param id ID
      */
     public void add(Long id) {
@@ -50,7 +50,7 @@ public class ImagePagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
 
-        // ƒŠƒXƒg‚©‚çæ“¾
+        // ãƒªã‚¹ãƒˆã‹ã‚‰å–å¾—
         Long id = mList.get(position);
         Uri uri = Uri.withAppendedPath(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, id.toString());
         Bitmap bitmap = null;
@@ -60,11 +60,11 @@ public class ImagePagerAdapter extends PagerAdapter {
             e.printStackTrace();
         }
 
-        // View ‚ğ¶¬
+        // View ã‚’ç”Ÿæˆ
         ImageView imageView = new ImageView(mContext);
         imageView.setImageBitmap(bitmap);
 
-        // ƒRƒ“ƒeƒi‚É’Ç‰Á
+        // ã‚³ãƒ³ãƒ†ãƒŠã«è¿½åŠ 
         container.addView(imageView);
 
         return imageView;
@@ -72,7 +72,7 @@ public class ImagePagerAdapter extends PagerAdapter {
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        // ƒRƒ“ƒeƒi‚©‚ç View ‚ğíœ
+        // ã‚³ãƒ³ãƒ†ãƒŠã‹ã‚‰ View ã‚’å‰Šé™¤
         container.removeView((View) object);
     }
 
@@ -87,8 +87,8 @@ public class ImagePagerAdapter extends PagerAdapter {
     }
     
     /**
-     * Bitmap ‚ğæ“¾‚·‚é.
-     * @param imageUri ‰æ‘œ‚Ì URI
+     * Bitmap ã‚’å–å¾—ã™ã‚‹.
+     * @param imageUri ç”»åƒã® URI
      * @return Bitmap
      * @throws IOException
      */

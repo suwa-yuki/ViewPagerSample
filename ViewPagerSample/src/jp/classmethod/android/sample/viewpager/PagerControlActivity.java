@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 /**
- * ViewPager ‚ğƒRƒ“ƒgƒ[ƒ‹‚·‚é‹@”\‚ğ’Ç‰Á‚·‚éƒTƒ“ƒvƒ‹.
+ * ViewPager ã‚’ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã™ã‚‹æ©Ÿèƒ½ã‚’è¿½åŠ ã™ã‚‹ã‚µãƒ³ãƒ—ãƒ«.
  */
 public class PagerControlActivity extends Activity {
     
@@ -18,7 +18,7 @@ public class PagerControlActivity extends Activity {
         
         setContentView(R.layout.activity_pager_control);
 
-        // ƒJƒXƒ^ƒ€ PagerAdapter ‚ğ¶¬
+        // ã‚«ã‚¹ã‚¿ãƒ  PagerAdapter ã‚’ç”Ÿæˆ
         CustomPagerAdapter adapter = new CustomPagerAdapter(this);
         adapter.add(Color.BLACK);
         adapter.add(Color.RED);
@@ -28,11 +28,11 @@ public class PagerControlActivity extends Activity {
         adapter.add(Color.MAGENTA);
         adapter.add(Color.YELLOW);
 
-        // ViewPager ‚ğ¶¬
+        // ViewPager ã‚’ç”Ÿæˆ
         ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
         viewPager.setAdapter(adapter);
         
-        // –ß‚éƒ{ƒ^ƒ“
+        // æˆ»ã‚‹ãƒœã‚¿ãƒ³
         findViewById(R.id.preview_button).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,7 +40,7 @@ public class PagerControlActivity extends Activity {
                 viewPager.setCurrentItem(viewPager.getCurrentItem() - 1);
             }
         });
-        // i‚Şƒ{ƒ^ƒ“
+        // é€²ã‚€ãƒœã‚¿ãƒ³
         findViewById(R.id.next_button).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,13 +48,13 @@ public class PagerControlActivity extends Activity {
                 viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
             }
         });
-        // ’Ç‰Áƒ{ƒ^ƒ“
+        // è¿½åŠ ãƒœã‚¿ãƒ³
         findViewById(R.id.add_button).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
                 CustomPagerAdapter adapter = (CustomPagerAdapter) viewPager.getAdapter();
-                // ƒ‰ƒ“ƒ_ƒ€‚ÉF‚ğ’Ç‰Á‚·‚é
+                // ãƒ©ãƒ³ãƒ€ãƒ ã«è‰²ã‚’è¿½åŠ ã™ã‚‹
                 int R = (int)( Math.random() * 256);
                 int G = (int)( Math.random() * 256);
                 int B = (int)( Math.random() * 256);

@@ -10,18 +10,18 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 /**
- * ƒJƒXƒ^ƒ€ PagerAdapter ƒNƒ‰ƒX.
+ * ã‚«ã‚¹ã‚¿ãƒ  PagerAdapter ã‚¯ãƒ©ã‚¹.
  */
 public class CustomPagerAdapter extends PagerAdapter {
 
-    /** ƒRƒ“ƒeƒLƒXƒg. */
+    /** ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ. */
     private Context mContext;
     
-    /** ƒŠƒXƒg. */
+    /** ãƒªã‚¹ãƒˆ. */
     private ArrayList<Integer> mList;
 
     /**
-     * ƒRƒ“ƒXƒgƒ‰ƒNƒ^.
+     * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿.
      */
     public CustomPagerAdapter(Context context) {
         mContext = context;
@@ -29,8 +29,8 @@ public class CustomPagerAdapter extends PagerAdapter {
     }
 
     /**
-     * ƒŠƒXƒg‚ÉƒAƒCƒeƒ€‚ğ’Ç‰Á‚·‚é.
-     * @param item ƒAƒCƒeƒ€
+     * ãƒªã‚¹ãƒˆã«ã‚¢ã‚¤ãƒ†ãƒ ã‚’è¿½åŠ ã™ã‚‹.
+     * @param item ã‚¢ã‚¤ãƒ†ãƒ 
      */
     public void add(Integer item) {
         mList.add(item);
@@ -39,17 +39,17 @@ public class CustomPagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
 
-        // ƒŠƒXƒg‚©‚çæ“¾
+        // ãƒªã‚¹ãƒˆã‹ã‚‰å–å¾—
         Integer item = mList.get(position);
 
-        // View ‚ğ¶¬
+        // View ã‚’ç”Ÿæˆ
         TextView textView = new TextView(mContext);
         textView.setText("Page:" + position);
         textView.setTextSize(30);
         textView.setTextColor(item);
         textView.setGravity(Gravity.CENTER);
 
-        // ƒRƒ“ƒeƒi‚É’Ç‰Á
+        // ã‚³ãƒ³ãƒ†ãƒŠã«è¿½åŠ 
         container.addView(textView);
 
         return textView;
@@ -57,19 +57,19 @@ public class CustomPagerAdapter extends PagerAdapter {
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        // ƒRƒ“ƒeƒi‚©‚ç View ‚ğíœ
+        // ã‚³ãƒ³ãƒ†ãƒŠã‹ã‚‰ View ã‚’å‰Šé™¤
         container.removeView((View) object);
     }
 
     @Override
     public int getCount() {
-        // ƒŠƒXƒg‚ÌƒAƒCƒeƒ€”‚ğ•Ô‚·
+        // ãƒªã‚¹ãƒˆã®ã‚¢ã‚¤ãƒ†ãƒ æ•°ã‚’è¿”ã™
         return mList.size();
     }
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        // Object “à‚É View ‚ª‘¶İ‚·‚é‚©”»’è‚·‚é
+        // Object å†…ã« View ãŒå­˜åœ¨ã™ã‚‹ã‹åˆ¤å®šã™ã‚‹
         return view == (TextView) object;
     }
 
